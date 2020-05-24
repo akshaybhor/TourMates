@@ -1,0 +1,33 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+
+
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <li>Hello, {{ user.first_name }}</a></li>
+    This is my destination page<br>
+    <br>
+    <a href="/" class="button">Home Page</a>
+    <li><a href="accounts/logout">Logout</a></li>
+    {% else %}
+    Log in First<br>
+    <br>
+    <br>
+    <li><a href="accounts/register">Register</a></li>
+    <li><a href="accounts/login">Login</a></li><br>
+    <a href="/" class="button">Home Page</a>
+    {% endif %}
+
+
+
+    <div>
+        {% for message in messages %}
+        <h3> {{message}}</h3>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
